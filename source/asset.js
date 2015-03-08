@@ -1,7 +1,7 @@
 export function fetch(load) {
-  let ver = System.meepworks && System.meepworks.appVersion || '';
-  return Promise.resolve(`load.address${ver}`);
+  return Promise.resolve(load.address);
 }
 export function instantiate(load) {
-  return load.address;
+  let ver = System.meepworks && System.meepworks.appVersion || '';
+  return load.address + ver;
 }
